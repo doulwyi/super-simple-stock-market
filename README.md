@@ -25,11 +25,18 @@
 
 ```
 >>> from sssmarket import sssm
->>> s = sssm.Sssm(stock='POP', stock_type='common', last_dividend=8, fixed_dividend=None, par_value=100)
+>>> s = sssm.Sssm(stock='POP')
+
+>>> s.stock_type = 'common'
+>>> s.last_dividend = 8
+>>> s.par_value = 100
+
 >>> s.dividend_yield(10)
 0.8
+
 >>> s.calculate_p_e_ratio(10)
 12.5
+
 >>> s.record_a_trade({'shares': 10, 'indicator': 'buy', 'price':100})
 {'timestamp': '2018-09-16T22:08:15.208716', 'stock_symbol': 'POP', 'shares': 10, 'indicator': 'buy', 'price': 100}
 ```
